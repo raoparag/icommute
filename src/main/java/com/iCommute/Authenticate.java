@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Authenticate {
 	@RequestMapping("/authenticate")
 	public User authenticate(){
+		
 		User user = new User();
 		return user;
 	}

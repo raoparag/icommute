@@ -6,10 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.iCommute.util.TestDao;
 
 @SpringBootApplication
+//@ImportResource("classpath:/applicationContext.xml")
 public class Application {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    public static void main(String[] args) throws ClassNotFoundException {
+    	SpringApplication app = new SpringApplication(Application.class);
+//        ApplicationContext context = 
+//                new FileSystemXmlApplicationContext("/Users/parag/hackathon/workspace/iCommute/src/main/resources/applicationContext.xml");
+        app.run(args);
         new TestDao().testConnection();
     }
 }
